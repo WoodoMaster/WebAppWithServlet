@@ -1,12 +1,14 @@
-package webapp01.controller.imp;
+package com.tc.webapp01.controller.imp;
 
-import webapp01.controller.Command;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+import com.tc.webapp01.controller.Command;
 
 public class RegistrationCommand implements Command {
 
@@ -39,7 +41,7 @@ public class RegistrationCommand implements Command {
 	}	
 		
 	private void redirect(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		 boolean flag = true;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
+		 boolean flag = true;  //заглушка 
 		if(flag) {
 			response.sendRedirect("Controller?command=GO_TO_MAINPAGE&registrationInfo=All ok!");
 			

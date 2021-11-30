@@ -1,4 +1,4 @@
-package webapp01.entity;
+package com.tc.webapp01.entity;
 
 import java.util.Objects;
 

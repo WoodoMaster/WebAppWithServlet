@@ -1,13 +1,15 @@
-package webapp01.controller;
-
-
-
-
-
-import webapp01.controller.imp.*;
+package com.tc.webapp01.controller;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.tc.webapp01.controller.imp.GoToIndexPageCommand;
+import com.tc.webapp01.controller.imp.GoToRegPageCommand;
+import com.tc.webapp01.controller.imp.RegistrationCommand;
+import com.tc.webapp01.controller.imp.GoToHelloPage;
+import com.tc.webapp01.controller.imp.GoToLoginPageCommand;
+import com.tc.webapp01.controller.imp.GoToMainPage;
+import com.tc.webapp01.controller.imp.LoginationCommand;
 
 public final class CommandProvider {
 	private final Map<String, Command> commands = new HashMap<String, Command>();

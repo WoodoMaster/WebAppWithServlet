@@ -1,12 +1,14 @@
-package webapp01.controller.imp;
+package com.tc.webapp01.controller.imp;
 
-import webapp01.controller.Command;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+import com.tc.webapp01.controller.Command;
 
 public class LoginationCommand implements Command {
 	@Override
