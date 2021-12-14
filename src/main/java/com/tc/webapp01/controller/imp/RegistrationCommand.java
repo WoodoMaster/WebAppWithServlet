@@ -11,50 +11,37 @@ import javax.servlet.http.HttpServletResponse;
 import com.tc.webapp01.controller.Command;
 
 public class RegistrationCommand implements Command {
-
+private String email; //передается дальше на страницу mainpage
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		System.out.println("Registration Hello, world!");
-		String name;
-		String surname;
+		String login;
 		String email;
 		String password;
-		
-		name = request.getParameter("name");
-		surname = request.getParameter("surname");
+		login = request.getParameter("login");
 		email = request.getParameter("email");
-		password = request.getParameter("password");	
-		System.out.println(name + " - " + surname);
+		this.email = email;
+		password = request.getParameter("password");
 		redirect(request, response);
-		
-		/*PrintWriter out = response.getWriter();		
-		out.write("<html> <head> <meta charset=\"ISO-8859-1\"> <title>Login Page</title> </head> "
-				+ "<body background=\"img/bg.jpg\"> "
-				+ "<h3>Welcome " + name +" " + surname +  "<hr> Your password is: " + password +"</h3>" + email +"<hr>" 
-				+"<h3>Back to <a href=\"MyController?command=main\">main page</a>  </h3>"
-				+ "</body> </html>");*/
-		
-		
-		
-	
-		
 	}	
 		
 	private void redirect(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		 boolean flag = true;  //�������� 
+		 boolean flag = true;  //Заглушка
 		if(flag) {
-			response.sendRedirect("Controller?command=GO_TO_MAINPAGE&registrationInfo=All ok!");
-			
-		//	request.setAttribute("registrationInfo", "All ok!");
-		//	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mainPage.jsp");
-	//	dispatcher.forward(request, response);
+		//передается на mainpage registrationInfo и email;
+			response.sendRedirect("Controller?command=GO_TO_MAINPAGE&registrationInfo=ok"+"&email="+email);
 		return;}
-		request.setAttribute("errorMessage", "Error!");
+		request.setAttribute("errorMessage", "Не удалось зарегестрироваться. " +
+				"Пожалуйста попробуйте позже!");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
 		dispatcher.forward(request, response);
 	}	
 		
-		
+			/*PrintWriter out = response.getWriter();
+		out.write("<html> <head> <meta charset=\"ISO-8859-1\"> <title>Login Page</title> </head> "
+				+ "<body background=\"img/bg.jpg\"> "
+				+ "<h3>Welcome " + name +" " + surname +  "<hr> Your password is: " + password +"</h3>" + email +"<hr>"
+				+"<h3>Back to <a href=\"MyController?command=main\">main page</a>  </h3>"
+				+ "</body> </html>");*/
 				
 	
 

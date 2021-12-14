@@ -1,5 +1,6 @@
 package com.tc.webapp01.entity;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Greeting {

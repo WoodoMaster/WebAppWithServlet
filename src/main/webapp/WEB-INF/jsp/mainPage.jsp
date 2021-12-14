@@ -1,54 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=utf-8" %>
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <title>Личный кабинет</title>
 </head>
-<body>
+<body bgcolor="#c0c0c0" background="img/logo1.jpeg">
 
 <%
-String reginfo =(String) request.getAttribute("registrationInfo");
-if(reginfo!=null){
+    String email = (String) request.getParameter("email");
+    String reginfo = (String) request.getParameter("registrationInfo");
+    String loginationInfo =(String) request.getParameter("loginationInfo");
+if (reginfo!=null) {
 %>
-
 <h2>
-<%
-out.print(reginfo);
-}
-%>
-
+    <%
+            out.print("Регистрация прошла успешно! На ваш электронный адрес "
+                    + email +" направлено письмо с подтверждением.");
+        } else if(loginationInfo.equals("ok")){
+             out.print("Вход в личный кабиней выполнен успешно");
+        }
+    %>
 </h2>
+<h3>Вернутся на
+    <a href="MyController?command=main">главную страницу</a></h3>
 
-<%
-String reginfoAttr =(String) request.getParameter("registrationInfo");
-if(reginfoAttr!=null){
-%>
-
-<h2>
-<%
-out.print(reginfoAttr);
-}
-%>
-
-</h2>
-
-<%
-String userName =(String) request.getAttribute("userName");
-if(userName!=null){
-%>
-
-<h2>
-<%
-out.print("Hello! " + userName);
-}
-%>
-
-</h2>
-
-
-
-<h3>!!!!!!!!!!!!!!!!!!!</h3>
 </body>
 </html>

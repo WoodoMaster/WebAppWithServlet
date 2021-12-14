@@ -1,19 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page import="com.tc.webapp01.entity.Greeting" %>
+<%@ page contentType="text/html;charset=utf-8" %>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
+<html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login Page</title>
+<title>Вход в личный кабинет</title>
 </head>
-<body background="img/bg.jpg">
+<body background="img/city1.jpg">
 
-�<h1>Write your login, password to continue...</h1>
+<h1>Для входа в личный кабинет введите логин и пароль</h1>
 <form action = "Controller" method="post">
-login:
+Логин:
 <input type = "text" name = "login" value =""/>
 <hr>
-password:
+Пароль:
 <input type = "text" name = "password" value =""/>
 <hr>
 <input type="hidden" name = "command" value = "login">

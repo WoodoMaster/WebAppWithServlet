@@ -1,1 +1,1 @@
-<%  response.sendRedirect("Controller?command=GO_TO_HELLOPAGE") ;%>
+<%  response.sendRedirect("Controller?command=GO_TO_NEWHELLOPAGE") ;%>

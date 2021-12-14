@@ -1,61 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-import ="com.tc.webapp01.entity.Greeting"
-    pageEncoding="ISO-8859-1"%>
+<%@ page import="com.tc.webapp01.entity.Greeting" %>
+<%@ page contentType="text/html;charset=utf-8" %>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>This is registration page</title>
+    <title>"NIILSA" Construction lab</title>
 </head>
-<body bgcolor="#c0c0c0" background="img/bg.jpg" >
-
+<body bgcolor="#c0c0c0" background="img/city1.jpg">
 <%
-String errorMsg =(String) request.getAttribute("errorMessage");
-if(errorMsg!=null){
+    String errorMsg = (String) request.getAttribute("errorMessage");
+    if (errorMsg != null) {
 %>
-
 <h2>
-<%
-out.print(errorMsg);
-}
-%>
-
+    <%
+            out.print(errorMsg);
+        }
+    %>
 </h2>
-
-
 <%
-Greeting obj = (Greeting) request.getAttribute("myobj");
-if(obj!=null){
-String message = obj.getMessage();
+    Greeting obj = (Greeting) request.getAttribute("myMsg");
+    if (obj != null) {
+        String message = obj.getMessage();
 
 %>
-<h1 style="color:red">
-<%out.print(message);
-} %>
-</h1>
-<h1>Hello new user! </h1>
- To complete registration write on forms and press "Register" button.
+<h2>
+    <%
+            out.print(message);
+        }
+    %>
+</h2>
+<h2>
+    Заполните форму:</h2>
 
-<form action = "Controller" method="post">
-Name:
-<input type = "text" name = "name" value =""/>
-<hr>
-Surname:
-<input type = "text" name = "surname" value =""/>
-<hr>
-email:
-<input type = "text" name = "email" value =""/>
-<hr>
-password:
-<input type = "text" name = "password" value =""/>
-<hr>
-<input type="hidden" name = "command" value = "register">
-<input type="submit" value="Register" />
+<form action="Controller" method="post">
+    Логин :
+    <input type="text" name="login" value=""/>
+    <hr>
+    Почта :
+    <input type="text" name="email" value=""/>
+    <hr>
+    Пароль:
+    <input type="text" name="password" value=""/>
+    <hr>
+    Для завершения регистрации нажмите
+    <input type="hidden" name="command" value="register">
+    <input type="submit" value="Далее"/>
 </form>
 <hr>
-<h3>Back to 
-<a href="MyController?command=main">main page</a>  </h3>
-
-
+<h3>Вернутся на
+    <a href="MyController?command=main">главную страницу</a></h3>
 </body>
 </html>
